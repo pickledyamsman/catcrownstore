@@ -1,0 +1,16 @@
+// Custom layout styles
+
+// Logo
+.title-area{
+  a { padding:0 !important }
+}
+
+// Forms
+.form-container {
+  padding: 3% 3%;
+  margin-top: 2em;
+  .switch > div {
+    position: relative;
+    top: -5px;
+  }
+}

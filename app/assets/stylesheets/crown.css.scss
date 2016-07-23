@@ -1,0 +1,14 @@
+// Index page style
+.crowns-grid {
+  .crown-card {
+    width:220px;
+    margin:auto;
+    .picture img {
+      height: 200px;
+      width: 200px;
+    }
+    .crown-info {
+      .name { height: 4em; }
+    }
+  }
+}

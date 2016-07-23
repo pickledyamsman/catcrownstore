@@ -1,0 +1,20 @@
+<h4 class="column">Your one stop shop for all of your cat crown needs.</h4>
+<div class="column">
+  <ul class="crown-grid no-bullet row">
+    <% @crowns.each do |crown| %>
+      <li class="large-3 medium-4 small-12 column">
+        <div class="crown-card padly">
+          <%= link_to crown, class: "picture" do %>
+            <%= image_tag asset_path(crown.picture_url) %>
+          <% end %>
+          <div class="crown-info ell glassy-bg padmy padlx">
+            <div class="name">
+              <h6><%= crown.name %> <span>(<%= crown.color %>)</span></h6>
+            </div>
+            <p class="left price label crown-label radius">$ <%= crown.price %></p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
