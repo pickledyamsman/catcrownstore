@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723003714) do
+ActiveRecord::Schema.define(version: 20160723143223) do
 
   create_table "crowns", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20160723003714) do
     t.datetime "updated_at",                null: false
     t.string   "picture_url", limit: 255
   end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer  "crown_id",   limit: 4
+    t.integer  "buyer_id",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "purchases", ["crown_id", "buyer_id"], name: "index_purchases_on_crown_id_and_buyer_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -37,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160723003714) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "braintree_customer_id",  limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -17,6 +17,9 @@ gem 'devise'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'hiredis'
+gem 'braintree'
+gem 'figaro'
+gem 'gon'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

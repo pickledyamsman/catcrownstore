@@ -7,7 +7,9 @@
     <%= @crown.name %>
     (<%= @crown.color %>)
   </h3>
-  <p class="label crown-label radius mb1">$ <%= @crown.price %></p>
+  <p class="label crown-label radius mb1">$ 
+    <%= (current_user && current_user.purchase?(@crown)) ? "Purchased" : "$#{@crown.price}" %>
+  </p>
 
   <h5>Flower Type(s)</h5>
   <p><%= @crown.flower_type %></p>

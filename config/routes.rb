@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'carts/show'
+  root 'crowns#index'
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+  
   resources :crowns, only: [:show, :index]
 
   resource :cart, only: [:show] do
@@ -9,5 +10,6 @@ Rails.application.routes.draw do
     put 'remove/:crown_id', to: 'carts#remove', as: :remove_from
   end
 
-  root 'crowns#index'
+  resources :transactions, only: [:new, :create]
+
 end
